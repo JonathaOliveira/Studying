@@ -9,6 +9,6 @@
 <!--Tecnologias-->
 <h4> Tecnologias para esse projeto </h4>
 <ul>
-<img align="center" alt="Jonatha-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-<img align="center" alt="Jonatha-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <li>HTML</li>
+  <li>CSS</li>
 </ul>
