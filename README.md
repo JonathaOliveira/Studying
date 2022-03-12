@@ -5,7 +5,7 @@
 <!--Introdução e Objetivo-->
 <h4> Introdução </h4>
 <p><i>Esse é meu primeiro projeto de estudo, meu foco é deixar uma pagina de manutenção no ar, informando que o site está em desenvolvimento.</br></i></p>
-<p><i>Desejo que fique elegante, simples e resposivel.</i></br>
+<p><i>Desejo que fique elegante, simples e responsivel.</i></br>
 <!--Tecnologias-->
 <h4> Tecnologias para esse projeto </h4>
 <ul>
