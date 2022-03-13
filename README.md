@@ -4,8 +4,8 @@
 <h3> 🛸 1º Projeto : Project001</h3>
 <!--Introdução e Objetivo-->
 <h4> Introdução </h4>
-<p><i>Esse projeto tenho como foco entender melhor como o HTML5 e CSS3 trabalham em conjunto com responsividade.</br></i></p>
-<p><i>Criar um menu responsivel para telas menores e dispositiveis moveis.</i></br>
+<p><i>Esse é meu primeiro projeto de estudo, meu foco é deixar uma pagina de manutenção no ar, informando que o site está em desenvolvimento.</br></i></p>
+<p><i>Desejo que fique elegante, simples e responsivel.</i></br>
 <!--Tecnologias-->
 <h4> Tecnologias para esse projeto </h4>
 <ul>
