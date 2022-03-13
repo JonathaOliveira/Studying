@@ -1,259 +1,196 @@
-/*Global*/
+/*======== Default ========*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/*Classes Auxiliares*/
-.container{
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2%;   
+/*======== Variables ========*/
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
 }
+/*======== Base ========*/
 
-.w50{
-    width: 50%;
-    float: left;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
 
-.center{text-align: center;}
-
-
-.clear{clear: both};
-
-/*Classes do site*/
-header{
-    padding: 8px 0;
-}
-.logo{
-    float: left;
-}
-
-.logo h2{
-    font-size: 23px;
-    font-weight: normal;
-}
-nav.menu-desktop li.selected{font-weight: normal;}
-nav.menu-desktop{
-    float: right;
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--body-color);
+  /*webkit deixa as fonts mais suaves , porem nem todos os navegadores tem suporte*/
+  -webkit-font-smoothing: antialiased;
 }
 
-nav.menu-desktop ul{
-    position: relative;
-    top: 8px;
+h1 {
+  font: 700 1.875rem 'Poppins', sans-serif;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
 }
 
-nav.menu-desktop li {
-    padding:0 10px;
-    font-weight: lighter;
-    display: inline-block;
+a {
+  text-decoration: none;
 }
 
-nav.menu-desktop a{
-    color: black;
-    text-decoration: none;
+img {
+  /*vai se adptar a pagina em vez de apresentar a resolução original*/
+  width: 100%;
+  height: auto;
 }
 
-nav.menu-desktop a:hover{font-weight: bold;}
+/*======== Header ========*/
 
-/*Sessão main*/
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
 
-section.main{
-    width: 100%;
-    position: relative;
-   /* height: 600px;*/
-    padding: 10px 0 100px 0;
-    background-image: url('../img/godd.jpg');
-    background-position: right 10%;
-    border-radius: #333 1px 2px 3px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
+  width: 100%;
 }
 
-section.main > .container{
-    position: relative;
-    z-index: 2;
+nav {
+  height: var(--header-height);
+  display: flex;
+  /*deixa um do lado do outro (logo <-> menu*/
+  align-items: center;
+  /*deixe bem centralizado a logo <> menu*/
+  justify-content: space-between;
+  /*justifica, deixa logo na estremidade esquerda <-> menu na estremidade direita*/
+  width: 100%;
 }
 
-
-.overlay{
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 30%;
-    left: 0;
-    top: 0;
+.logo {
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--title-color);
 }
 
-
-section.main h2{
-    color: #fff;
-    font-size: 40px;
-    font-weight: normal;
+.logo span {
+  color: var(--base-color);
 }
 
-section.main p{
-    text-align: left;
-    color: #fff;
-    font-size: 17px;
-    margin-top: 15px;
-    font-weight: lighter;
-
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
-/*Seção Serviços*/
-
-section.services{
-    padding: 30px 0;
-    color: #235C83;
-    text-align: center;
+.grid {
+  display: grid;
+  gap: 2rem;
+  /*Espaçamento entre os itens*/
+}
+.section {
+  padding: 5rem 0;
+  /*Em um espaçamento de 80px por cada section melhor aplicar uma classe em todas as sections para obedecer a esse padão*/
 }
 
-.line-text{
-    position: relative;
-    display: inline-block;
-    color: #235C83;;
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+  );
 }
 
-.line-text > div{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 3px;
-    background-color: #235C83;
+main {
+  margin-top: var(--header-height);
 }
 
-.line-text h2{
-    font-weight: normal;
-    font-size: 27px;
+#home {
+  overflow: hidden;
+  /*Não deixa transbordar*/
 }
 
-.services-ico{
-    margin-top: 30px;
-
+#home .container {
+  margin: 0;
 }
 
-.box-ico{
-    float: left;
-    width: 33.3%;
-    margin-bottom: 20px;
-    padding: 0 10px;
+#home .image {
+  position: relative;
 }
 
-.box-ico h2{
-    font-size: 40px;
-    color: #235C83;
+#home .image::before {
+  content: '';
+  /*cria um elento fantasma antes da imagem*/
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  z-index: 0;
 }
 
-.box-ico p {
-    color: #235C83;
-    font-size: 16px;
-    font-weight: lighter;
+#home .image img {
+  position: relative;
+  right: 2.93rem;
 }
 
-section.sobre-equipe{
-    padding: 30px 0;
-    background: rgb(225,225,225);
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
 }
 
-section.sobre-equipe > .container{
-    display: flex;
-    flex-wrap: wrap;
-    
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
 }
 
-.equipe-container{
-    width: 50%;
+#home .text h1 {
+  margin-bottom: 1rem;
 }
 
-.sobre-container{
-    width: 50%;
+#home .text p {
+  margin-bottom: 2rem;
 }
 
-.sobre-container p{
-    color: black;
-    font-size: 15px;
-    margin-top: 10px;
+.button {
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
 }
 
-.img-avatar{
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-size: 100% 100%;
+.button:hover {
+  background: var(--base-color-alt);
 }
 
-.avatar-box{
-    margin-top: 15px;
-}
+/*======== Dicas utilizadas neste CSS ========*/
+/*
+#Dicas de código
 
-.descricao-avatar{
-    padding: 0 10px;
-    width: calc(100% - 70px);
-    display: inline-block;
-}
+#----Dica 001
+{Dica Como calcular o "rem"}
 
-.descricao-avatar h3{
-    color: #333;
-    font-weight: normal;
-    font-style: italic;
-}
+Se o padrão do navegador é definir que uma fonte de 100% = 16px o calculo de "rem" será da seguinte maneira: 
 
-.descricao-avatar p{
-    color: #333;
-    font-weight: normal;
-    font-style: lighter;
-}
+imaginem que uma fonte tem 72px, para que eu possa
+converter em "rem" devo achar um valor que multiplicado por 16 dê os 75px:
 
-section.inscricao{
-    background: cadetblue;
-    padding: 10px 0;
-}
+16*4,5 = 72px
 
-.inscricao-texto p {
-    font-weight: normal;
-    color:white;
-}
+exemple: height: 4.5rem;
 
-.inscricao-form input[type=text]{
-    width: calc(100% - 120px);
-    height: 40px;
-    background: white;
-    border: 1px solid #ccc;
-    display: inline-block;
+#----Dica 002
 
-}
-
-.inscricao-form input[type=submit]{
-    width: 120px;
-    height: 40px;
-    background: #235C83;
-    cursor: pointer;
-    display: inline-block;
-    border: 0;
-    color: white;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-@media screen and (max-width: 768px){
-    .w50{width: 100%;margin-bottom: 20px;}
-    .box-ico{
-        width: 100%;
-    }
-    .equipe-container{
-        width: 100%;
-    }
-    .sobre-container{
-        width: 100%;
-        margin-top: 60px;
-    }
-    
-}
-    
+*/
