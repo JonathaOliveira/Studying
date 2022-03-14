@@ -31,10 +31,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -62,6 +66,7 @@ img {
   width: 100%;
 }
 
+/*======== Menu ========*/
 nav {
   height: var(--header-height);
   display: flex;
@@ -73,6 +78,69 @@ nav {
   width: 100%;
 }
 
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  /*utilizando after, será após o conteudo*/
+  content: '';
+  width: 0%;
+  /*Não vai aparecer a linha abaixo do menu*/
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  /*nav ul li a:hover::after -> é absoluto relativo à nav ul li a*/
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.3s;
+  /*tempo para aparecer a barra*/
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  /*mas quando passar o mouse a linha a baixo do menu começa a aparecer*/
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+/*======== Mostrar Menu ========*/
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+  /*deixa todos os itens centralizados na tela*/
+}
+
+nav.show ul.grid {
+  /*como a classe grid a cima tem uma especifidade maior foi necessario fazer o apontamento de .grid para receber em ul o peso maior que o apontado na classe grid*/
+  gap: 4rem;
+  /*espaçamento a lista de itens do menu*/
+}
+/*======== Logo ========*/
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -81,7 +149,7 @@ nav {
 .logo span {
   color: var(--base-color);
 }
-
+/*======== Main ========*/
 .container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -107,7 +175,7 @@ nav {
 }
 
 main {
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + 2rem);
 }
 
 #home {
@@ -192,5 +260,11 @@ converter em "rem" devo achar um valor que multiplicado por 16 dê os 75px:
 exemple: height: 4.5rem;
 
 #----Dica 002
+
+Ex: nav .show é deferente de nav.show
+
+nav .show (busco uma classe dentro de nav)
+
+nav.show (nav vai receber uma classe .show)
 
 */
